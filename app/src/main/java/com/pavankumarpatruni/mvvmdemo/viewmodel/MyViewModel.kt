@@ -8,7 +8,7 @@ import com.pavankumarpatruni.mvvmdemo.repo.UserRepository
 
 class UserViewModel : ViewModel() {
 
-    var userList: MutableLiveData<List<User>> = MutableLiveData()
+    private var userList: MutableLiveData<List<User>> = MutableLiveData()
 
     fun getUserList(): LiveData<List<User>> {
         userList = UserRepository.getInstance().getUserList()
