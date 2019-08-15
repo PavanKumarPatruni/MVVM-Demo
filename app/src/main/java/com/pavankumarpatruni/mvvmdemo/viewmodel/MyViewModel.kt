@@ -8,8 +8,6 @@ import com.pavankumarpatruni.mvvmdemo.repo.UserRepository
 
 class UserViewModel : ViewModel() {
 
-    private var list: MutableList<User> = ArrayList()
-
     var userList: MutableLiveData<List<User>> = MutableLiveData()
 
     fun getUserList(): LiveData<List<User>> {
@@ -18,7 +16,7 @@ class UserViewModel : ViewModel() {
     }
 
     fun addUser() {
-        list = userList.value as MutableList<User>
+        val list = userList.value as MutableList<User>
 
         var size = list.size
         ++size
